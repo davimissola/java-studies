@@ -4,10 +4,11 @@ import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Movie;
 import br.com.alura.screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        Movie myMovie = new Movie();
-        myMovie.setName("Seven");
+        Movie myMovie = new Movie("Seven");
         myMovie.setAnoLancamento(2004);
         myMovie.setIncluidoNoPlano(true);
         myMovie.setDuracaoEmMinutos(150);
@@ -16,10 +17,12 @@ public class Main {
         myMovie.rateMovie(8.9);
         myMovie.showMovie();
 
-        Movie myMovie2 = new Movie();
+        Movie myMovie2 = new Movie("Rede social");
+        myMovie2.setAnoLancamento(2010);
         myMovie2.setDuracaoEmMinutos(190);
 
-        Movie myMovie3 = new Movie();
+        Movie myMovie3 = new Movie("Sociedade dos poetas mortos");
+        myMovie3.setAnoLancamento(1978);
         myMovie3.setDuracaoEmMinutos(130);
 
 
@@ -47,5 +50,15 @@ public class Main {
         episodio.setSerie(mentalista);
         episodio.setTotalVisualizacao(1500);
         filtro.filtra(episodio);
+
+
+        ArrayList<Movie> arrayMovie = new ArrayList<>();
+        arrayMovie.add(myMovie);
+        arrayMovie.add(myMovie2);
+        arrayMovie.add(myMovie3);
+        System.out.println("Tamanho da lista : " + arrayMovie.size());
+        System.out.println(arrayMovie);
+
+        Movie myMovie4 = new Movie("Poderoso chefão");
     }
 }
